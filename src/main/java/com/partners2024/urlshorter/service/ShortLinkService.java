@@ -35,4 +35,7 @@ public class ShortLinkService {
   }
 
 
+  public List<ShortLink> getAllLinks() {
+    return shortLinkRepository.findAllByDeletedFalseOrderByCreatedAtDesc();
+  }
 }

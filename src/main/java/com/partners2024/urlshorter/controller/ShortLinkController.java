@@ -4,6 +4,7 @@ import com.partners2024.urlshorter.entity.ShortLink;
 import com.partners2024.urlshorter.repository.ShortLinkRepository;
 import com.partners2024.urlshorter.service.ShortLinkService;
 import java.lang.ProcessBuilder.Redirect;
+import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,10 @@ public class ShortLinkController {
     } else {
       return new RedirectView("/404");
     }
+  }
+
+  @GetMapping("/links")
+  public List<ShortLink> getAllLinks() {
+    return shortLinkService.getAllLinks();
   }
 }

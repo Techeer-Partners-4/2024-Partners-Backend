@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ShortLinkRepository extends JpaRepository<ShortLink, Long> {
-    Optional<ShortLink> findByHash(String hash);
-    Optional<ShortLink> findByOriginalUrlAndDeletedFalse(String originalUrl);
-  Optional<ShortLink> findByHashAndDeletedFalse(String hash);
+
+  Optional<ShortLink> findByHash(String hash);
+
   List<ShortLink> findAllByDeletedFalseOrderByCreatedAtDesc();
 
 }
