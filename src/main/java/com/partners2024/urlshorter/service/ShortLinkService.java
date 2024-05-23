@@ -4,6 +4,7 @@ import com.partners2024.urlshorter.entity.ShortLink;
 import com.partners2024.urlshorter.repository.ShortLinkRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,4 +29,10 @@ public class ShortLinkService {
         .build();
     return shortLinkRepository.save(shortLink);
   }
+
+  public Optional<ShortLink> getOriginalUrl(String hash) {
+    return shortLinkRepository.findByHash(hash);
+  }
+
+
 }

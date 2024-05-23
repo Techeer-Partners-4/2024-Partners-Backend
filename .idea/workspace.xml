@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91d1079-6fd0-4e5c-ac5b-4c92f53b08fe" name="변경" comment="feat : 1번 Short Link 생성하기 기능 구현" />
+    <list default="true" id="d91d1079-6fd0-4e5c-ac5b-4c92f53b08fe" name="변경" comment="feat : gitignore 추가">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/partners2024/urlshorter/controller/ShortLinkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/partners2024/urlshorter/controller/ShortLinkController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ShortLinkController.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ShortLinkService.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/partners2024/urlshorter/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/partners2024/urlshorter/controller/ShortLinkController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +70,8 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.UrlShorterApplication.executor": "Run",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.UrlShorterApplication.executor": "Debug",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/jinoo/Desktop/jinoo/Programming/TecheerPartners/2024-Partners-Backend",
     "node.js.detected.package.eslint": "true",
@@ -116,6 +132,7 @@
       <workItem from="1716201808405" duration="26000" />
       <workItem from="1716201853630" duration="39000" />
       <workItem from="1716482912060" duration="331000" />
+      <workItem from="1716483251570" duration="1270000" />
     </task>
     <task id="LOCAL-00001" summary="feat : 1번 Short Link 생성하기 기능 구현">
       <option name="closed" value="true" />
@@ -133,7 +150,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716483220302</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat : 1번 Short Link 생성하기 기능 구현">
+      <option name="closed" value="true" />
+      <created>1716483294789</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716483294789</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat : gitignore 추가">
+      <option name="closed" value="true" />
+      <created>1716483518723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716483518723</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +174,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat : 1번 Short Link 생성하기 기능 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 1번 Short Link 생성하기 기능 구현" />
+    <MESSAGE value="feat : gitignore 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : gitignore 추가" />
   </component>
 </project>
