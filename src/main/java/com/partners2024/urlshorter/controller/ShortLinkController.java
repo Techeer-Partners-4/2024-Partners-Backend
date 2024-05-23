@@ -3,6 +3,8 @@ package com.partners2024.urlshorter.controller;
 import com.partners2024.urlshorter.entity.ShortLink;
 import com.partners2024.urlshorter.repository.ShortLinkRepository;
 import com.partners2024.urlshorter.service.ShortLinkService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 import java.util.Optional;
@@ -16,15 +18,21 @@ import org.springframework.web.servlet.view.RedirectView;
 @RestController
 @RequestMapping("/short-links")
 @AllArgsConstructor
+@Tag(name = "Short Link", description = "Short Link API")
 public class ShortLinkController {
 
   private final ShortLinkService shortLinkService;
+
+  @Operation(summary = "Create Short Link", description = "Create Short Link with original URL", tags = {
+      "Short Link"})
 
   @PostMapping("/create")
   public ShortLink createShortLink(@RequestParam String originalUrl) {
     return shortLinkService.createShortLink(originalUrl);
   }
 
+  @Operation(summary = "Redirect Short Link", description = "Redirect to original URL", tags = {
+      "Short Link"})
   @GetMapping("/{hash}")
   public RedirectView redirect(@PathVariable String hash) {
     Optional<ShortLink> shortLinkOptional = shortLinkService.getOriginalUrl(hash);
@@ -36,11 +44,15 @@ public class ShortLinkController {
     }
   }
 
+  @Operation(summary = "Get All Short Links", description = "Get All Short Links", tags = {
+      "Short Link"})
   @GetMapping("/links")
   public List<ShortLink> getAllLinks() {
     return shortLinkService.getAllLinks();
   }
 
+  @Operation(summary = "Delete Short Link", description = "Delete Short Link by hash", tags = {
+      "Short Link"})
   @DeleteMapping("/delete/{hash}")
   public ResponseEntity<String> deleteShortLink(@PathVariable String hash) {
     boolean isDeleted = shortLinkService.deleteShortLink(hash);
