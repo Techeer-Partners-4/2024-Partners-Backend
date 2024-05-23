@@ -12,4 +12,6 @@ public interface ShortLinkRepository extends JpaRepository<ShortLink, Long> {
 
   List<ShortLink> findAllByDeletedFalseOrderByCreatedAtDesc();
 
+  Optional<ShortLink> findByHashAndDeleted(String hash, Boolean bool);
+
 }

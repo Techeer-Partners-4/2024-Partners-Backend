@@ -29,5 +29,9 @@ public class ShortLink {
     this.createdAt = createdAt;
     this.shortUrl = shortUrl;
   }
+
+  public void deleteUrl() {
+    this.deleted = true;
+  }
 }
 

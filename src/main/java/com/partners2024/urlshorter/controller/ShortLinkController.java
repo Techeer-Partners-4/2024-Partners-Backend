@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -38,4 +40,15 @@ public class ShortLinkController {
   public List<ShortLink> getAllLinks() {
     return shortLinkService.getAllLinks();
   }
+
+  @DeleteMapping("/delete/{hash}")
+  public ResponseEntity<String> deleteShortLink(@PathVariable String hash) {
+    boolean isDeleted = shortLinkService.deleteShortLink(hash);
+    if (isDeleted) {
+      return ResponseEntity.ok("Short Link deleted successfully.");
+    } else {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Short Link not found.");
+    }
+  }
+
 }

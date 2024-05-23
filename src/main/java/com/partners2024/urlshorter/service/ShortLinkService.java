@@ -31,11 +31,23 @@ public class ShortLinkService {
   }
 
   public Optional<ShortLink> getOriginalUrl(String hash) {
-    return shortLinkRepository.findByHash(hash);
+    return shortLinkRepository.findByHashAndDeleted(hash, false);
   }
 
 
   public List<ShortLink> getAllLinks() {
     return shortLinkRepository.findAllByDeletedFalseOrderByCreatedAtDesc();
+  }
+
+
+  public boolean deleteShortLink(String hash) {
+    Optional<ShortLink> shortLinkOptional = shortLinkRepository.findByHashAndDeleted(hash, false);
+    if (shortLinkOptional.isPresent()) {
+      ShortLink shortLink = shortLinkOptional.get();
+      shortLink.deleteUrl();
+      shortLinkRepository.save(shortLink);
+      return true;
+    }
+    return false;
   }
 }
