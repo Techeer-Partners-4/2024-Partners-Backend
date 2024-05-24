@@ -3,14 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }.container {
+             background-color: white;
+             padding: 20px;
+             border-radius: 8px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             text-align: center;
+             width: 300px;
+         }
+    </style>
 </head>
 <body>
-<div>
+<div class = "container">
     <h1>URL 단축 서비스</h1>
     <form>
         <input type="text" placeholder="단축할 URL을 입력하세요" required>
         <button type="submit">입력하기</button>
     </form>
 </div>
+
+
 </body>
 </html>
