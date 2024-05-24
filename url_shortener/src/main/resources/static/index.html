@@ -81,14 +81,23 @@
 </div>
 
 <script>
+    const str2hash = (str) => {
+        let hash = 5381;
+        for (let i = 0; i < str.length; i++) {
+            hash = ((hash << 5) + hash) + str.charCodeAt(i); // hash * 33 + c
+        }
+        return hash & 0xFFFFFFFF;
+    };
+
     btn = document.getElementById("submitBtn");
     inputURL = document.getElementById("inputURL");
     originalURL = document.getElementById("originalURL");
+    shortenURL = document.getElementById("shortenURL");
 
     btn.addEventListener("click", function(event){
         event.preventDefault();
-
         originalURL.innerText = inputURL.value;
+        shortenURL.innerText = "http://localhost:8000/short-links/"+str2hash(inputURL.value);
     })
 </script>
 
