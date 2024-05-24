@@ -3,7 +3,6 @@ package Partners.url_shortener.domain;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.time.DateTimeException;
 import java.time.LocalDateTime;
 
 @Entity
