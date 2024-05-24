@@ -70,16 +70,27 @@
 <div class = "container">
     <h1>URL 단축 서비스</h1>
     <form>
-        <input type="text" placeholder="단축할 URL을 입력하세요" required>
-        <button type="submit">입력하기</button>
+        <input type="text" id="inputURL" placeholder="단축할 URL을 입력하세요" required>
+        <button type="submit" id="submitBtn">입력하기</button>
     </form>
     <div class="result" id="result">
-        <p class="result" id="originalURL"> http://localhost:8000/short-links/this_is_long_long_example</p>
+        <p class="result" id="originalURL"> http:///this_is/very_very/long_long_long/URL_example.com</p>
         /
         <p class="result" id="shortenURL"> http://localhost:8000/short-links/43r1sv56s</p>
     </div>
 </div>
 
+<script>
+    btn = document.getElementById("submitBtn");
+    inputURL = document.getElementById("inputURL");
+    originalURL = document.getElementById("originalURL");
+
+    btn.addEventListener("click", function(event){
+        event.preventDefault();
+
+        originalURL.innerText = inputURL.value;
+    })
+</script>
 
 </body>
 </html>
