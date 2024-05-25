@@ -6,7 +6,6 @@ import TechPartners.__Partners_Backend.dto.ResUrlDto;
 import TechPartners.__Partners_Backend.service.UrlService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -47,15 +46,9 @@ public class ShortLinkController {
     @Operation(
         summary = "URL 생성", description = "입력받은 URL을 기반으로 short url과 해시값을 생성합니다."
     )
-    @ApiResponses({
-        @ApiResponse(
-            responseCode = "200", description = "URL 생성에 성공하였습니다."
-        ),
-        @ApiResponse(
-            responseCode = "400", description = "입력 데이터 형식 오류가 발생하였습니다."
-        )
-    })
-
+    @ApiResponse(
+        responseCode = "200", description = "URL 생성에 성공하였습니다."
+    )
     @PostMapping
     public ResponseEntity<ResUrlDto> createUrl(@Valid @RequestBody ReqUrlDto reqUrlDto) {
         return ResponseEntity.ok().body(urlService.createUrl(reqUrlDto));
@@ -64,31 +57,21 @@ public class ShortLinkController {
     @Operation(
         summary = "해시값으로 url 리다이렉트", description = "path값을 해시값으로 받고 그 값의 url이 있으면 원본 URL로 리다이렉트를 합니다."
     )
-    @ApiResponses({
-        @ApiResponse(
-            responseCode = "200", description = "URL 리다이렉트에 성공하였습니다."
-        ),
-        @ApiResponse(
-            responseCode = "404", description = "해당 리소스가 존재하지 않습니다."
-        )
-    })
+    @ApiResponse(
+        responseCode = "200", description = "URL 리다이렉트에 성공하였습니다."
+    )
     @GetMapping("/{hash}")
-    public RedirectView redirect(@PathVariable("hash") String hash) {
+    public ResponseEntity<RedirectView> redirect(@PathVariable("hash") String hash) {
         ResUrlDto url = urlService.getUrl(hash);
-        return new RedirectView(url.getOriginUrl());
+        return ResponseEntity.ok().body(new RedirectView(url.getOriginUrl()));
     }
 
     @Operation(
         summary = "해시값 삭제", description = "path값을 해시값으로 받고 그 값에 해당하는 url 데이터를 삭제합니다."
     )
-    @ApiResponses({
-        @ApiResponse(
-            responseCode = "200", description = "URL 삭제에 성공하였습니다."
-        ),
-        @ApiResponse(
-            responseCode = "404", description = "해당 리소스가 존재하지 않습니다."
-        )
-    })
+    @ApiResponse(
+        responseCode = "200", description = "URL 삭제에 성공하였습니다."
+    )
     @DeleteMapping("/{hash}")
     public ResponseEntity<?> deleteUrl(@PathVariable("hash") String hash) {
         urlService.deleteShortLink(hash);

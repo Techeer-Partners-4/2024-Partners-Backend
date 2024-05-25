@@ -1,6 +1,5 @@
 package TechPartners.__Partners_Backend.exception;
 
-import TechPartners.__Partners_Backend.exception.BusinessException;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
