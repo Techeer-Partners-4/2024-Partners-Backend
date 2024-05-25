@@ -60,6 +60,7 @@ public class ShortLinkController {
     @ApiResponse(
         responseCode = "200", description = "URL 리다이렉트에 성공하였습니다."
     )
+
     @GetMapping("/{hash}")
     public ResponseEntity<RedirectView> redirect(@PathVariable("hash") String hash) {
         ResUrlDto url = urlService.getUrl(hash);
