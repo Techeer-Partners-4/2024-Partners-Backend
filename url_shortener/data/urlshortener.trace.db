@@ -1,0 +1,24 @@
+2024-05-25 16:29:38.275955+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+insert into url (created_at,hash,originalurl,shortenurl,id) values (?,?,?,?,default) [42104-224]
+2024-05-25 16:29:42.836083+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+insert into url (created_at,hash,originalurl,shortenurl,id) values (?,?,?,?,default) [42104-224]
+2024-05-25 16:29:56.497171+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+insert into url (created_at,hash,originalurl,shortenurl,id) values (?,?,?,?,default) [42104-224]
+2024-05-25 16:30:13.890347+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+insert into url (created_at,hash,originalurl,shortenurl,id) values (?,?,?,?,default) [42104-224]
+2024-05-25 19:44:46.682315+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+select u1_0.id,u1_0.created_at,u1_0.hash,u1_0.originalurl,u1_0.shortenurl from url u1_0 where u1_0.shortenurl=? [42104-224]
+2024-05-25 19:45:06.918364+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+select u1_0.id,u1_0.created_at,u1_0.hash,u1_0.originalurl,u1_0.shortenurl from url u1_0 where u1_0.shortenurl=? [42104-224]
+2024-05-25 19:45:24.113532+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+select u1_0.id,u1_0.created_at,u1_0.hash,u1_0.originalurl,u1_0.shortenurl from url u1_0 where u1_0.shortenurl=? [42104-224]
+2024-05-25 19:45:33.341270+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "URL" not found (this database is empty); SQL statement:
+select u1_0.id,u1_0.created_at,u1_0.hash,u1_0.originalurl,u1_0.shortenurl from url u1_0 where u1_0.shortenurl=? [42104-224]

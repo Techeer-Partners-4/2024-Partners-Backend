@@ -1,22 +1,30 @@
 package Partners.url_shortener.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import Partners.url_shortener.domain.URL;
 import Partners.url_shortener.service.URLservice;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@Controller
+@RestController
+@RequestMapping("/shorten")
 public class URLcontroller {
 
+    private static final Logger logger = LoggerFactory.getLogger(URLcontroller.class);
+
     @Autowired
-    private URLservice ureService;
+    public URLcontroller(URLservice urlService) {
+    }
 
     @GetMapping("/")
-    public String noboarding() {
+    public String onboarding() {
         return "onboarding";
     }
 
@@ -37,4 +45,5 @@ public class URLcontroller {
             return "error";
         }
     }
+
 }
