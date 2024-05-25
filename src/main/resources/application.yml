@@ -33,3 +33,19 @@ logging:
     sql: debug
     org.hibernate.type : TRACE
     TechPartners.__Partners_Backend: DEBUG
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    display-query-params-without-oauth2: true
+    doc-expansion: none
+  paths-to-match:
+    - /**
+  packages-to-scan: TechPartners.__Partners_Backend
