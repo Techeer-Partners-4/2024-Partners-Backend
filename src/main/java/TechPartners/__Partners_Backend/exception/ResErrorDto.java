@@ -1,4 +1,4 @@
-package TechPartners.__Partners_Backend.dto;
+package TechPartners.__Partners_Backend.exception;
 
 import TechPartners.__Partners_Backend.exception.BusinessException;
 import jakarta.validation.constraints.NotEmpty;
