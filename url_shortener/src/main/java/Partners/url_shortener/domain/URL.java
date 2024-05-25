@@ -28,8 +28,8 @@ public class URL {
         this.id = id;
     }
 
-    public String getOriginalURL() {
-        return originalURL;
+    public String getOriginalURL(String originalURL) {
+        return this.originalURL;
     }
 
     public void setOriginalURL(String originalURL) {
