@@ -5,8 +5,7 @@ import Partners.url_shortener.service.URLservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -19,6 +18,13 @@ public class URLcontroller {
     @GetMapping("/")
     public String noboarding() {
         return "onboarding";
+    }
+
+    @PostMapping("/shorten")
+    public String shortenUrl(@RequestParam("url") String originalUrl, Model model) {
+        URL url = URLservice.shortenURL(originalUrl);
+        model.addAttribute("shortUrl", url.getShortenURL());
+        return "result";
     }
 
     @GetMapping("/{shortenURL}")
