@@ -28,7 +28,7 @@ public class URL {
         this.id = id;
     }
 
-    public String getOriginalURL(String originalURL) {
+    public String getOriginalURL() {
         return this.originalURL;
     }
 
