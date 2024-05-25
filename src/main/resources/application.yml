@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: 2024-Partners-Backend
+  datasource:
+    url: jdbc:h2:mem:test;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  output:
+    ansi:
+      enabled: always
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true # 인코딩 설정 방식 강제성
+
+logging:
+  level:
+    sql: debug
+    org.hibernate.type : TRACE
+    TechPartners.__Partners_Backend: DEBUG
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    doc-expansion: none
+  paths-to-match:
+    - /**
+  packages-to-scan: TechPartners.__Partners_Backend
