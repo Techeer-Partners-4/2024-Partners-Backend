@@ -3,6 +3,7 @@ package TechPartners.__Partners_Backend.service;
 import TechPartners.__Partners_Backend.domain.Url;
 import TechPartners.__Partners_Backend.dto.ReqUrlDto;
 import TechPartners.__Partners_Backend.dto.ResUrlDto;
+import TechPartners.__Partners_Backend.exception.BusinessException;
 import TechPartners.__Partners_Backend.repository.UrlRepository;
 import TechPartners.__Partners_Backend.util.SHA256;
 import java.util.List;
@@ -36,7 +37,9 @@ public class UrlService {
     }
 
     public ResUrlDto getUrl(String hash){
-        Url byHashAndDeleted = urlRepository.findByHashAndDeleted(hash, false).orElseThrow();
+        Url byHashAndDeleted = urlRepository.findByHashAndDeleted(hash, false).orElseThrow(
+            () -> new BusinessException("There is no url resource.",404) //not found
+        );
 
         return new ResUrlDto(
             byHashAndDeleted.getOriginUrl(),
@@ -51,7 +54,9 @@ public class UrlService {
     }
 
     public void deleteShortLink(String hash){
-        Url url = urlRepository.findByHashAndDeleted(hash, false).orElseThrow();
+        Url url = urlRepository.findByHashAndDeleted(hash, false).orElseThrow(
+            () -> new BusinessException("There is no url resource.",404)
+        );
         url.deleteUrl();
         urlRepository.save(url);
     }
