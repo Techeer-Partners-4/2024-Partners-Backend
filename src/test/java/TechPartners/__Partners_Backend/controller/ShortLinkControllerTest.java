@@ -26,12 +26,6 @@ class ShortLinkControllerTest {
     @Autowired
     private MockMvc mvc;
 
-//    @InjectMocks
-//    private ShortLinkController shortLinkController;
-//
-//    @Mock
-//    public UrlService urlService;
-
     @Autowired
     private UrlRepository urlRepository;
 
@@ -66,11 +60,13 @@ class ShortLinkControllerTest {
         ResultActions resultActions = mvc.perform(
             MockMvcRequestBuilders.post("/short-link")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(new Gson().toJson(new ReqUrlDto("www.naver.qwer")))
+                .content(new Gson().toJson(new ReqUrlDto("wwwnaver.qwer")))
         );
 
         resultActions
-            .andExpect(status().is4xxClientError());
+            .andExpect(status().isBadRequest())
+            .andExpect(jsonPath("message").exists())
+            .andExpect(jsonPath("statusCode",400).exists());
     }
 
     @Test
@@ -79,7 +75,21 @@ class ShortLinkControllerTest {
         ResultActions resultActions = mvc.perform(
             MockMvcRequestBuilders.get("/short-link/newHash")
                 .contentType(MediaType.APPLICATION_JSON)
-                .pathInfo("/newHash")
+        );
+
+        resultActions
+            .andExpect(status().isNotFound())
+            .andExpect(jsonPath("message","There is no url resource.").exists())
+            .andExpect(jsonPath("statusCode",404).exists());
+
+    }
+
+    @Test
+    void 비정상_DELETE_deleteUrl_없는해시값() throws Exception {
+        //when
+        ResultActions resultActions = mvc.perform(
+            MockMvcRequestBuilders.delete("/short-link/newHash")
+                .contentType(MediaType.APPLICATION_JSON)
         );
 
         resultActions
