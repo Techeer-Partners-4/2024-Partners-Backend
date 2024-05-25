@@ -4,6 +4,7 @@ import TechPartners.__Partners_Backend.domain.Url;
 import TechPartners.__Partners_Backend.dto.ReqUrlDto;
 import TechPartners.__Partners_Backend.dto.ResUrlDto;
 import TechPartners.__Partners_Backend.service.UrlService;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +32,7 @@ public class ShortLinkController {
     }
 
     @PostMapping
-    public ResponseEntity<ResUrlDto> createUrl(@RequestBody ReqUrlDto reqUrlDto){
+    public ResponseEntity<ResUrlDto> createUrl(@Valid @RequestBody ReqUrlDto reqUrlDto){
         return ResponseEntity.ok().body(urlService.createUrl(reqUrlDto));
     }
 
