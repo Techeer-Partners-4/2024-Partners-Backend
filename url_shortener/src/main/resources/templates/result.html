@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>단축된 URL</title>
+</head>
+<body>
+<h1>단축된 URL</h1>
+<p>단축된 URL: <a th:href="'/' + ${shortUrl}" th:text="'http://localhost:8080/' + ${shortUrl}"></a></p>
+<a href="/">다시 단축하기</a>
+</body>
+</html>
