@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>URL 단축 서비스</title>
+</head>
+<body>
+<h1>URL 단축 서비스</h1>
+<form action="/shorten" method="post">
+    <input type="url" name="url" placeholder="단축할 URL을 입력하세요" required>
+    <button type="submit">단축하기</button>
+</form>
+</body>
+</html>
