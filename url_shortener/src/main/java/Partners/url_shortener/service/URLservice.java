@@ -12,21 +12,21 @@ import java.util.Optional;
 public class URLservice {
 
     @Autowired
-    public URLrepository urlRepository;
+    private static URLrepository urlRepository;
 
-    public URL shortenURL(String originalURL){
+    public static URL shortenURL(String originalURL){
         String shortURL = generateShortUrl(originalURL);
         URL url = new URL();
-        url.getOriginalURL(originalURL);
+        url.setOriginalURL(originalURL);
         url.setShortenURL(shortURL);
         return urlRepository.save(url);
     }
 
-    public Optional<URL> findByShortUrl(String shortUrl) {
+    public static Optional<URL> findByShortenUrl(String shortUrl) {
         return urlRepository.findByShortenURL(shortUrl);
     }
 
-    private String generateShortUrl(String originalUrl) {
+    private static String generateShortUrl(String originalUrl) {
         return Integer.toHexString(originalUrl.hashCode());
     }
 }
